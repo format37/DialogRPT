@@ -1,6 +1,6 @@
 # fork info
 Nothing changed, but some files added to build a container: https://hub.docker.com/repository/docker/format37/dialog_gpt_en  
-Server script: https://github.com/format37/DialogRPT/blob/master/src/server.py  
+Human vs machine dialog generator. Continuosly waits for redis message, then generating answer and sending them back. GPU and CPU available witch defined in parameters of run command.
 ### Try this if gpu will not available in container
 ```
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
@@ -14,6 +14,7 @@ sudo systemctl restart docker
 docker run --name dialog_gpt_en --gpus all --net=host -e "computing=gpu" -e "port=6379" -e "sampling=true" -e "temperature=0.5" -e "n_hyp=1" -e "topk=3" -e "beam=3" -e "topp=0.8" -e "wt_ranker=1." -d format37/dialog_gpt_en:latest
 ```
 Client example script: https://github.com/format37/DialogRPT/blob/master/docker/example.py  
+Server script: https://github.com/format37/DialogRPT/blob/master/src/server.py  
 # Original readme
 <p align="center">
     <br>
