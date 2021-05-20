@@ -5,7 +5,8 @@ Run container:
 ```
 docker run --name dialog_gpt_en --gpus all --net=host -e "computing=gpu" -e "port=6379" -e "sampling=true" -e "temperature=0.5" -e "n_hyp=1" -e "topk=3" -e "beam=3" -e "topp=0.8" -e "wt_ranker=1." -d format37/dialog_gpt_en:latest
 ```
-Client example script: https://github.com/format37/DialogRPT/blob/master/docker/example.py
+Client example script: https://github.com/format37/DialogRPT/blob/master/docker/example.py  
+# Original readme
 <p align="center">
     <br>
     <img src="doc/icon.png" width="400"/>
