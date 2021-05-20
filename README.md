@@ -1,3 +1,7 @@
+# fork info
+Created to build a container: https://hub.docker.com/repository/docker/format37/dialog_gpt_en  
+Server script: https://github.com/format37/DialogRPT/blob/master/src/server.py  
+
 <p align="center">
     <br>
     <img src="doc/icon.png" width="400"/>
