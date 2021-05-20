@@ -1,7 +1,7 @@
 # fork info
 Nothing changed, but some files added to build a container: https://hub.docker.com/repository/docker/format37/dialog_gpt_en  
 Human vs machine dialog generator. Continuosly waits for redis message, then generating answer and sending them back. GPU and CPU available witch defined in parameters of run command.
-### Try this if gpu will not available in container
+### Try this on a host machine if gpu will not available in container
 ```
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
