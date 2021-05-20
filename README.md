@@ -1,7 +1,15 @@
 # fork info
 Nothing changed, but some files added to build a container: https://hub.docker.com/repository/docker/format37/dialog_gpt_en  
 Server script: https://github.com/format37/DialogRPT/blob/master/src/server.py  
-Run container:  
+### Try this if gpu will not available in container
+```
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+sudo systemctl restart docker
+```
+### Run container:  
 ```
 docker run --name dialog_gpt_en --gpus all --net=host -e "computing=gpu" -e "port=6379" -e "sampling=true" -e "temperature=0.5" -e "n_hyp=1" -e "topk=3" -e "beam=3" -e "topp=0.8" -e "wt_ranker=1." -d format37/dialog_gpt_en:latest
 ```
